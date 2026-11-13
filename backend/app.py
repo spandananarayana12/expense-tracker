@@ -1,4 +1,4 @@
-import os,sys
+import os,sys,sqlite3
 from flask import Flask,send_from_directory
 from flask_cors import CORS
 sys.path.insert(0,os.path.dirname(os.path.abspath(__file__)))
@@ -15,6 +15,16 @@ app=Flask(__name__,static_folder=FRONTEND,static_url_path='')
 app.secret_key=SECRET_KEY
 app.config['JSON_SORT_KEYS']=False
 CORS(app,supports_credentials=True)
+def initialize_database():
+	db_path=app.config['DATABASE']
+	os.makedirs(os.path.dirname(db_path),exist_ok=true)
+	conn=sqlite3.connect(db_path)
+	schema_path=os.path.join(os.path.dirname(os.path.dirname(__file__)),'database','schema.sql')
+	with open(schema_path,'r')as file:
+		conn.executescript(file.read())
+	conn.commit()
+	conn.close()
+initialize_database()
 for bp in (auth_bp,dashboard_bp,transaction_bp,budget_bp,report_bp,profile_bp):app.register_blueprint(bp,url_prefix='/api')
 @app.route('/')
 def index():return send_from_directory(FRONTEND,'index.html')
