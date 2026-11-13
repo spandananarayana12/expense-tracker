@@ -1,0 +1,155 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Dashboard - Expense Tracker</title>
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/dashboard.css">
+</head>
+
+<body>
+
+    <div id="app">
+
+        <!-- Sidebar -->
+        <aside class="sidebar">
+
+              <a class="brand" href="dashboard.html">
+        <img src="assets/images/icon.png"
+         alt="Expense Tracker Logo"
+         class="app-logo">
+        <span>Expense Tracker</span>
+    </a>
+
+            <nav class="side-nav">
+
+                <a class="active" href="dashboard.html">
+                    ⌂ <span>Dashboard</span>
+                </a>
+
+                <a href="add-transaction.html">
+                    ＋ <span>Add Transaction</span>
+                </a>
+
+                <a href="budget.html">
+                    ▣ <span>Budget</span>
+                </a>
+
+                <a href="reports.html">
+                    ◈ <span>Reports</span>
+                </a>
+
+                <a href="profile.html">
+                    ♙ <span>Profile</span>
+                </a>
+
+                <a href="about.html">
+                    ⓘ <span>About</span>
+                </a>
+
+            </nav>
+
+            <a class="logout" id="logout">
+                ↪ Logout
+            </a>
+
+        </aside>
+
+        <!-- Main Content -->
+        <main class="content">
+
+            <!-- Page Header -->
+            <div class="page-head">
+
+                <h1>Dashboard</h1>
+
+                <a href="profile.html" class="profile-header">
+
+                    <span class="profile-icon">
+    <img id="profileAvatar"
+         src="assets/images/default-avatar.png"
+         alt="Profile Avatar">
+</span>
+
+                    <span class="profile-greeting">
+                        Hello, <b id="userName"></b>
+                    </span>
+
+                </a>
+
+            </div>
+
+            <!-- Statistics Cards -->
+            <section class="stat-grid">
+
+                <article class="stat-card balance">
+                    <span>Total Balance</span>
+                    <strong id="balance">₹0</strong>
+                </article>
+
+                <article class="stat-card income">
+                    <span>Total Income</span>
+                    <strong id="income">₹0</strong>
+                </article>
+
+                <article class="stat-card expense">
+                    <span>Total Expenses</span>
+                    <strong id="expenses">₹0</strong>
+                </article>
+
+            </section>
+
+            <!-- Dashboard Grid -->
+            <section class="dashboard-grid">
+
+                <!-- Expenses by Category -->
+                <article class="panel">
+
+                    <div class="panel-head">
+                        <h2>Expenses by Category</h2>
+                    </div>
+
+                    <div class="chart-wrap">
+
+                        <canvas id="categoryChart"></canvas>
+
+                       <div id="categoryLegend" class="legend"></div>
+
+                    </div>
+
+                </article>
+
+                <!-- Recent Transactions -->
+                <article id="transactions" class="panel">
+
+                    <div class="panel-head">
+
+                        <h2>Recent Transactions</h2>
+
+                        <a href="add-transaction.html">Add New</a>
+
+                    </div>
+
+                    <div id="recentTransactions" class="transactions-list"></div>
+
+                </article>
+
+            </section>
+
+        </main>
+
+    </div>
+
+    <!-- JavaScript Files -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <script src="js/main.js"></script>
+    <script src="js/dashboard.js"></script>
+
+</body>
+</html>

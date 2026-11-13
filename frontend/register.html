@@ -1,0 +1,109 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Register - Expense Tracker</title>
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/auth.css">
+</head>
+
+<body class="auth-page">
+
+    <!-- Header -->
+    <header class="topbar public">
+
+        <a class="brand" href="index.html">
+        <img src="assets/images/icon.png"
+         alt="Expense Tracker Logo"
+         class="app-logo">
+        <span>Expense Tracker</span>
+    </a>
+
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="login.html">Login</a>
+        </nav>
+
+    </header>
+
+    <!-- Registration Section -->
+    <main class="auth-wrap">
+
+        <section class="auth-card">
+
+            <h1>Create Your Account</h1>
+
+            <p class="muted">
+                Start your journey to better financial management
+            </p>
+
+            <form id="registerForm">
+
+                <label>
+                    Full Name
+                    <input
+                        id="name"
+                        required
+                        placeholder="Enter your name">
+                </label>
+                <label>Select Profile Avatar</label>
+
+<div class="avatar-options">
+    <label>
+        <input type="radio" name="avatar" value="girl" required>
+        <span>👩 Girl</span>
+    </label>
+
+    <label>
+        <input type="radio" name="avatar" value="boy">
+        <span>👨 Boy</span>
+    </label>
+</div>
+                <label>
+                    Email
+                    <input
+                        id="email"
+                        type="email"
+                        required
+                        placeholder="Enter your email">
+                </label>
+
+                <label>
+                    Password
+                    <input
+                        id="password"
+                        type="password"
+                        minlength="6"
+                        required
+                        placeholder="Create a password">
+                </label>
+
+                <button class="btn primary full" type="submit">
+                    Register
+                </button>
+
+                <div id="authMessage" class="message"></div>
+
+            </form>
+
+            <p class="auth-foot">
+                Already have an account?
+                <a href="login.html">Login</a>
+            </p>
+
+        </section>
+
+    </main>
+
+    <!-- JavaScript Files -->
+    <script src="js/main.js"></script>
+    <script src="js/auth.js"></script>
+
+</body>
+</html>

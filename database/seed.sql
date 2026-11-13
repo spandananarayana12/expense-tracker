@@ -1,0 +1,2 @@
+-- Sample rows are intentionally omitted because passwords must be hashed by the application.
+-- Register a user, then add transactions and budgets from the UI.

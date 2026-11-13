@@ -1,0 +1,137 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Profile - Expense Tracker</title>
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/profile.css">
+</head>
+
+<body>
+
+    <div class="layout">
+
+        <!-- Sidebar -->
+        <aside class="sidebar">
+
+            <a class="brand" href="dashboard.html">
+        <img src="assets/images/icon.png"
+         alt="Expense Tracker Logo"
+         class="app-logo">
+        <span>Expense Tracker</span>
+    </a>
+
+            <nav class="side-nav">
+
+                <a href="dashboard.html">
+                    ⌂ <span>Dashboard</span>
+                </a>
+
+                <a href="add-transaction.html">
+                    ＋ <span>Add Transaction</span>
+                </a>
+
+                <a href="budget.html">
+                    ▣ <span>Budget</span>
+                </a>
+
+                <a href="reports.html">
+                    ◈ <span>Reports</span>
+                </a>
+
+                <a class="active" href="profile.html">
+                    ♙ <span>Profile</span>
+                </a>
+
+                <a href="about.html">
+                    ⓘ <span>About</span>
+                </a>
+
+            </nav>
+
+            <a class="logout" id="logout">
+                ↪ Logout
+            </a>
+
+        </aside>
+
+        <!-- Main Content -->
+        <main class="content">
+
+            <header class="page-head">
+                <h1>Profile</h1>
+            </header>
+
+            <!-- Profile Panel -->
+            <section class="panel profile-panel">
+
+                <div class="profile-heading">
+
+                    <div class="avatar large">N</div>
+
+                    <div>
+                        <h2 id="profileName">User</h2>
+                        <p id="profileEmail">user@example.com</p>
+                    </div>
+
+                </div>
+
+                <!-- Profile Form -->
+                <form id="profileForm">
+
+                    <label>
+                        Full Name
+                        <input id="name" required>
+                    </label>
+
+                    <label>
+                        Email
+                        <input id="email" type="email" required>
+                    </label>
+
+                    <h3>Change Password</h3>
+
+                    <div class="password-grid">
+
+                        <label>
+                            Old Password
+                            <input id="oldPassword" type="password">
+                        </label>
+
+                        <label>
+                            New Password
+                            <input id="newPassword" type="password">
+                        </label>
+
+                        <label>
+                            Confirm Password
+                            <input id="confirmPassword" type="password">
+                        </label>
+
+                    </div>
+
+                    <button class="btn primary" type="submit">
+                        Update Profile
+                    </button>
+
+                    <div id="profileMessage" class="message"></div>
+
+                </form>
+
+            </section>
+
+        </main>
+
+    </div>
+
+    <!-- JavaScript Files -->
+    <script src="js/main.js"></script>
+    <script src="js/profile.js"></script>
+
+</body>
+</html>

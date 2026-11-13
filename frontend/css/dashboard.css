@@ -1,0 +1,87 @@
+/* Fix horizontal scrolling */
+html,
+body {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+#app {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+#app .content {
+    box-sizing: border-box;
+    min-width: 0;
+    width: calc(100% - 220px);
+    margin-left: 220px;
+    padding: 24px 28px;
+}
+
+#app .dashboard-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    min-width: 0;
+}
+
+#app .panel {
+    min-width: 0;
+}
+
+#app .chart-wrap {
+    min-width: 0;
+}
+
+#app .chart-wrap canvas {
+    max-width: 100%;
+}
+
+@media (max-width: 800px) {
+    #app .content {
+        width: calc(100% - 72px);
+        margin-left: 72px;
+        padding: 18px;
+    }
+
+    #app .dashboard-grid {
+        grid-template-columns: 1fr;
+    }
+}
+/* Fix chart and category legend overflow */
+#app .dashboard-grid .panel {
+    min-width: 0;
+    overflow: hidden;
+}
+
+#app .chart-wrap {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    min-width: 0;
+    gap: 18px;
+}
+
+#app .chart-wrap canvas {
+    width: 100% !important;
+    max-width: 230px;
+    max-height: 230px;
+}
+
+.profile-icon {
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.profile-icon img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}

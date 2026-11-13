@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Add Transaction - Expense Tracker</title>
+
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body>
+
+    <div class="layout">
+
+        <!-- SIDEBAR -->
+
+        <aside class="sidebar">
+
+              <a class="brand" href="dashboard.html">
+        <img src="assets/images/icon.png"
+         alt="Expense Tracker Logo"
+         class="app-logo">
+        <span>Expense Tracker</span>
+    </a>
+
+
+            <!-- NAVIGATION MENU -->
+
+            <nav class="side-nav">
+
+                <a href="dashboard.html">
+                    ⌂
+                    <span>Dashboard</span>
+                </a>
+
+                <a class="active" href="add-transaction.html">
+                    ＋
+                    <span>Add Transaction</span>
+                </a>
+
+                <a href="budget.html">
+                    ▣
+                    <span>Budget</span>
+                </a>
+
+                <a href="reports.html">
+                    ◈
+                    <span>Reports</span>
+                </a>
+
+                <a href="profile.html">
+                    ♙
+                    <span>Profile</span>
+                </a>
+
+                <a href="about.html">
+                    ⓘ
+                    <span>About</span>
+                </a>
+
+            </nav>
+
+
+            <!-- LOGOUT -->
+
+            <a class="logout" id="logout">
+                ↪ Logout
+            </a>
+
+        </aside>
+
+
+        <!-- MAIN CONTENT -->
+
+        <main class="content">
+
+            <!-- PAGE HEADER -->
+
+            <header class="page-head">
+
+                <h1>Add Transaction</h1>
+
+            </header>
+
+
+            <!-- TRANSACTION FORM -->
+
+            <section class="panel form-panel">
+
+
+                <!-- INCOME / EXPENSE SWITCH -->
+
+                <div class="type-switch">
+
+                    <button
+                        class="type-btn active income-type"
+                        data-type="income"
+                    >
+                        ↗ Income
+                    </button>
+
+                    <button
+                        class="type-btn expense-type"
+                        data-type="expense"
+                    >
+                        ↘ Expense
+                    </button>
+
+                </div>
+
+
+                <!-- FORM -->
+
+                <form id="transactionForm">
+
+                    <input
+                        type="hidden"
+                        id="type"
+                        value="income"
+                    >
+
+
+                    <!-- AMOUNT -->
+
+                    <label>
+
+                        Amount
+
+                        <input
+                            id="amount"
+                            type="number"
+                            min="0.01"
+                            step="0.01"
+                            required
+                            placeholder="Enter amount"
+                        >
+
+                    </label>
+
+
+                    <!-- CATEGORY -->
+
+                    <label>
+
+                        Category
+
+                        <select id="category" required>
+
+                            <option value="">
+                                Select category
+                            </option>
+
+                            <option>Food</option>
+
+                            <option>Transport</option>
+
+                            <option>Shopping</option>
+
+                            <option>Bills</option>
+
+                            <option>Others</option>
+
+                            <option>Salary</option>
+
+                        </select>
+
+                    </label>
+
+
+                    <!-- DATE -->
+
+                    <label>
+
+                        Date
+
+                        <input
+                            id="date"
+                            type="date"
+                            required
+                        >
+
+                    </label>
+
+
+                    <!-- DESCRIPTION -->
+
+                    <label>
+
+                        Description
+
+                        <textarea
+                            id="description"
+                            placeholder="Enter description (optional)"
+                        ></textarea>
+
+                    </label>
+
+
+                    <!-- SUBMIT BUTTON -->
+
+                    <button
+                        class="btn primary full"
+                        type="submit"
+                    >
+                        Add Transaction
+                    </button>
+
+
+                    <!-- FORM MESSAGE -->
+
+                    <div
+                        id="formMessage"
+                        class="message"
+                    ></div>
+
+                </form>
+
+            </section>
+
+        </main>
+
+    </div>
+
+
+    <!-- JAVASCRIPT FILES -->
+
+    <script src="js/main.js"></script>
+
+    <script src="js/add-transaction.js"></script>
+
+</body>
+
+</html>
